@@ -9,9 +9,18 @@ def hanging_out_cards():
 
 
 def black_jack():
+    count = 0
     print("Let will 'Black Jack' play?")
-    current_card = hanging_out_cards().pop()
-    print(f"Your card is: {current_card}")
+    choice = input("Do you want take a card? (y/n)\n")
+    while True:
+        if choice == "y":
+            current_card = hanging_out_cards().pop()
+            print(f"Your card is: {current_card}")
+            count += current_card
+        elif choice == "n":
+            print(f"You have score {count}. And it is all for you.")
+            break
+    print("By! The end of the game.")
 
 
 if __name__ == "__main__":
